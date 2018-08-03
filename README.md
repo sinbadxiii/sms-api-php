@@ -1,4 +1,4 @@
-# SMS GATEWAY PHP PHP
+# SMS GATEWAY PHP
 
 Library Sms Sender
 
