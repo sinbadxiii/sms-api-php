@@ -2,19 +2,21 @@
 
 namespace Sinbadxiii\Gateway;
 
-class GatewaySemySMS implements GatewayInterface
+use Sinbadxiii\Client\ClientInterface;
+
+class GatewaySemySMS extends GatewayBase implements GatewayInterface
 {
     const BASE_URL = 'https://semysms.net/';
 
-    protected $client;
     protected $token;
     protected $deviceId;
 
-    public function __construct($client, $authParam)
-    {
-        $this->client   = $client;
+    public function __construct(array $authParam, ClientInterface $client = null)
+    {        
         $this->token    = $authParam['token'];
         $this->deviceId = $authParam['device'];
+        parent::__construct($client);
+
     }
 
     public function sendSMS($message, $phone) {

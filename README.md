@@ -36,6 +36,8 @@ or create the composer.json file as follows:
 
 # Use
 
+Example for SemySMS Gateway
+
 ```
 
 $authParam = [
@@ -43,11 +45,14 @@ $authParam = [
     'device' => 'yyyy'
 ];
 
- $sms = new \Sinbadxiii\SMS(
-                new \Sinbadxiii\Gateway\GatewaySemySMS(
-                    new \Sinbadxiii\Client\CurlClient(), $authParam
-                )
-            );
+$smsGatawey = new \Sinbadxiii\Gateway\GatewaySemySMS(
+                                  $authParam
+                              );
+
+$sms = new \Sinbadxiii\SMS($smsGatawey);
+
+$message = "Hello! How are you do?";
+$phone = +7xxxxxxxxx;
 
 $sms->send($message, $phone);
 

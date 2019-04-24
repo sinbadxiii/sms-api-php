@@ -2,11 +2,13 @@
 
 namespace Sinbadxiii;
 
+use Sinbadxiii\Gateway\GatewayInterface;
+
 class SMS
 {
     protected $gateway;
 
-    public function __construct($gateway)
+    public function __construct(GatewayInterface $gateway)
     {
         $this->gateway = $gateway;
     }
