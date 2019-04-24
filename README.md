@@ -52,7 +52,7 @@ $smsGatawey = new \Sinbadxiii\Gateway\GatewaySemySMS(
 $sms = new \Sinbadxiii\SMS($smsGatawey);
 
 $message = "Hello! How are you do?";
-$phone = +7xxxxxxxxx;
+$phone   = "+7xxxxxxxxx";
 
 $sms->send($message, $phone);
 
